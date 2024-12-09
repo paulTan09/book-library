@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    text-align: center;
+    color: #e5e5e2;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+body {
+   padding: min(50px, 7%);
+   background-color: rgb(45, 45, 42);
+}
+
+.headerFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#libraryTitle, #addBtn {
+    display: inline-block;
+    margin: 0 10px;
+    margin-bottom: 20px;
+}
+#addBtn {
+    color:#e5e5e2;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+#addBtn:hover {
+    transform: scale(1.1) rotate(360deg);
+    animation: pulse 1.5s infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* glow fx */
+}
+
+/* pulse anim */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+ .libraryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    justify-content: center;
+ }
+.bookCard {
+    padding: 2em;
+    border: 1px solid rgb(75, 82, 92);
+    border-radius: 10px;
+    background-color: #222429;
+    text-align: center;
+}
+#deleteCardBtn {
+    margin-top: 25px;
+    min-width: 100px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #f08379;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+#deleteCardBtn:hover {
+    background-color: #af3f35;
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+#deleteCardBtn:active {
+    transform: scale(0.98);
+}
+
+dialog {
+    width: 50%;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background-color: #22211e;
+    color: #ceccc5;
+    /* center the modal */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+/* backdrop used to dim the page when the modal is open */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+form {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"] {
+    background-color: #2c2f36;
+    border: 1px solid #4b525c;
+    border-radius: 4px;
+    color: #e5e5e2;
+    height: 20px;
+    width: 50%;
+    height: 1.5rem;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.inline-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-group {
+    display: flex;
+    width: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.input-group input {
+    max-width: 7ch;
+    margin-left: 10px;
+    border: 1px solid #4b525c;
+    border-radius: 4px;
+    background-color: #2c2f36;
+    color: #e5e5e2;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin: 0;
+    accent-color: #4b525c;
+    width: 20px;
+    height: 20px;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 50px;
+}
+.button-group button {
+    flex: 1;
+    min-width: 100px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.button-group button:first-child { /* submit btn */
+    background-color: #4a90e2;
+    color: #e5e5e2;
+}
+.button-group button:last-child { /* cancel btn */
+    background-color: #6c757d;
+    color: #e5e5e2;
+}
+.button-group button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+.button-group button:active {
+    transform: scale(0.98);
+}

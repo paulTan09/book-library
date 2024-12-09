@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="headerFlex">
+        <h1 id="libraryTitle">My Library</h1>
+        <button type="button" id="addBtn">
+            <img src="icons\add-circle.svg"/>
+        </button>
+    </div>
+
+    <dialog id="addPopup">
+        <div class="wrapper">
+            <h2>Add a new book</h2>
+            <form>
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title">
+
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author">
+
+                <div class="inline-row">
+                    <div class="input-group">
+                        <label for="pages">Pages</label>
+                        <input type="number" id="pages" name="pages">
+                    </div>
+                    <div class="checkbox-group">
+                        <label for="read">Read it?</label>
+                        <input type="checkbox" id="read" name="read">
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" id="submitBtnPopup">Submit</button>
+                    <button type="button" id="cancelBtnPopup">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+    
+    <!--BOOK Cards-->
+    <div class="libraryGrid"> </div>
+</body>
+<script src="app.js"></script>
+</html>
